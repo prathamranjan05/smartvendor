@@ -1,0 +1,232 @@
+/* Import a readable, friendly Google Font that supports Hindi */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+/* --- Color Palette & Base Setup --- */
+:root {
+  --brand-orange: #FF7B00;
+  --brand-green: #27ae60;
+  --text-dark: #34495e;
+  --text-light: #7f8c8d;
+  --bg-cream: #fff9f0;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  margin: 0;
+  background-color: var(--bg-cream);
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  color: var(--text-dark);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 10px var(--shadow-color);
+  border-bottom: 4px solid var(--brand-orange);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portal-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--brand-orange);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--brand-orange);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.settings-button {
+  font-size: 1.5rem;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Daily Cart Page Specific Styles --- */
+.cart-container {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 25px var(--shadow-color);
+}
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cart-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+}
+
+.cart-date {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table thead th {
+  text-align: left;
+  padding-bottom: 1rem;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.cart-item-row td {
+  padding: 1.5rem 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.quantity-input {
+  width: 80px;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
+.item-price {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.remove-btn:hover {
+  color: #c0392b;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-section {
+  width: 100%;
+  max-width: 350px;
+  text-align: right;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.total-row.grand-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  border-top: 2px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.checkout-btn {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: 1.5rem 0 0 auto; /* Aligns with the total section */
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--brand-green);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #229954;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}

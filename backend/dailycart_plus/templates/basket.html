@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basket.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>🧺 My Basket</h1>
+
+    <!-- Add to Basket Form -->
+    <form method="post" action="{{ url_for('vendor.add_to_basket', vendor_id=vendor_id) }}" class="add-form" onsubmit="return validateAddForm()">
+        <select name="item" id="item" required>
+            <option disabled selected value="">Select an item</option>
+            {% for ing in ingredients %}
+                <option value="{{ ing }}">{{ ing }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" name="quantity" id="quantity" step="0.1" min="0.1" placeholder="Qty (kg)" required>
+        <button type="submit"><span class="icon">➕</span> Add</button>
+    </form>
+
+    {% if basket %}
+    <!-- Basket Table -->
+    <table class="basket-table" id="basketTable">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty (kg)</th>
+                <th>Price/kg</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in basket %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>₹{{ item.price }}</td>
+                <td class="item-total">₹{{ item.total }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('vendor.remove_from_basket', vendor_id=vendor_id) }}" onsubmit="return confirm('Remove {{ item.name }} from basket?')">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        <button type="submit" class="remove-btn">🗑 Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">Grand Total</th>
+                <th colspan="2" id="grandTotal">₹{{ grand_total }}</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Subscribe to Basket Button -->
+    <form method="post" action="{{ url_for('vendor.subscribe_basket', vendor_id=vendor_id) }}" class="subscribe-form">
+        <button type="submit" class="subscribe-btn">
+            <span class="icon">🔔</span> Subscribe to Basket
+        </button>
+    </form>
+
+    {% if subscribed %}
+    <p class="success-msg">✅ Subscribed!</p>
+    {% endif %}
+    
+    {% else %}
+    <p class="empty-msg">Your basket is empty. Add items to get started!</p>
+    {% endif %}
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="{{ url_for('vendor.view_subscriptions', vendor_id=vendor_id) }}">📦 My Subscriptions</a>
+        <a href="{{ url_for('vendor.view_history', vendor_id=vendor_id) }}">📜 View History</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function validateAddForm() {
+    const qty = document.getElementById('quantity').value;
+    if (qty <= 0) {
+        alert('Quantity must be greater than 0.');
+        return false;
+    }
+    return true;
+}
+</script>
+{% endblock %}

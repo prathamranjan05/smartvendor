@@ -1,0 +1,77 @@
+/* src/components/Footer.css */
+
+.footer-container {
+    background-color: #386641;
+    color: #f0f0f0;
+    /* Further reduced padding for a very compact look */
+    padding: 1.25rem 0 0.75rem 0; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Reduced gap */
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .brand-info {
+        justify-content: flex-start;
+    }
+}
+
+.footer-logo {
+    width: 40px; /* Further reduced logo size */
+    height: 40px;
+    margin-bottom: 0;
+}
+
+.footer-brand-name {
+    font-weight: 600; /* Slightly reduced weight */
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 1rem; /* Further reduced font size */
+}
+
+.footer-tagline {
+    font-size: 0.75rem; /* Further reduced font size */
+    color: #d0d0d0;
+    margin-bottom: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.25rem; /* Reduced gap */
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .footer-links {
+        justify-content: flex-end;
+    }
+}
+
+.footer-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem; /* Slightly smaller link text */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #4a7c51;
+    padding-top: 0.75rem; /* Reduced padding */
+    margin-top: 1.25rem; /* Reduced margin */
+    font-size: 0.75rem; /* Further reduced font size */
+    color: #b0b0b0;
+}

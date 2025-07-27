@@ -1,0 +1,120 @@
+/* Import a friendly, readable Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+/* Define your brand's color palette for all three roles */
+:root {
+  --brand-primary: #FF7B00; /* Vibrant Orange for Vendor */
+  --brand-success: #28a745;  /* Jade Green for Supplier */
+  --brand-secondary: #007bff; /* Professional Blue for Customer */
+  --text-color: #333;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Full-page container with a background image */
+.role-selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Baloo 2', cursive;
+  background-color: #fdf5e6;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
+
+/* Main card for selecting the role */
+.role-card {
+  background-color: var(--card-bg);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border: 2px solid #fff;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Style for your brand logo */
+.brand-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Animation applied ONLY on hover */
+.brand-logo:hover {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Keyframes for the logo's bouncing animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.role-card h2 {
+  color: var(--text-color);
+  font-size: 2.5rem; /* Large, clear text */
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Container for the role buttons */
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between buttons */
+}
+
+/* Common button styles */
+.btn.btn-lg {
+  padding: 15px 30px;
+  font-size: 1.5rem; /* Big font size for readability */
+  font-weight: 700;
+  border-radius: 50px; /* Pill-shaped buttons */
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styling for the Vendor button */
+.btn.btn-primary {
+  background-color: var(--brand-primary);
+  color: white;
+}
+.btn.btn-primary:hover {
+  background-color: #E66A00; /* Darker orange */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.4);
+}
+
+/* --- ADDED: Styling for the Supplier button --- */
+.btn.btn-success {
+  background-color: var(--brand-success);
+  color: white;
+}
+.btn.btn-success:hover {
+  background-color: #218838; /* Darker green */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* --- UPDATED: Styling for the Customer button --- */
+.btn.btn-secondary {
+  background-color: var(--brand-secondary);
+  color: white;
+}
+.btn.btn-secondary:hover {
+  background-color: #0069D9; /* Darker blue */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
