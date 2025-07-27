@@ -38,7 +38,7 @@ export default function Dashboard({ role }) {
 
         <Row className="g-4 g-lg-5 justify-content-center">
           <Col md={6} lg={4}>
-            <Link to="http://localhost:5000/" className="dashboard-card-v2 daily-cart">
+            <Link to="https://dailycart-plus-copy.onrender.com" className="dashboard-card-v2 daily-cart">
               <div className="card-title-v2">{t('dailyCartCard')}</div>
             </Link>
           </Col>

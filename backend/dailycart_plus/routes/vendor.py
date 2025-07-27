@@ -8,7 +8,13 @@ vendor_bp = Blueprint('vendor', __name__)
 # ------------ Load Ingredient Prices ------------
 def load_ingredient_prices():
     prices = {}
-    csv_path = os.path.join('data', 'ingredients.csv')
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(base_dir, '../data/ingredients.csv')
+
+    if not os.path.exists(csv_path):
+        print(f"[ERROR] File not found: {csv_path}")
+        return prices
+
     with open(csv_path, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
@@ -52,6 +58,7 @@ def should_deliver_today(subscription):
 # ------------ Basket Routes ------------
 @vendor_bp.route('/<int:vendor_id>/basket', methods=['GET'])
 def show_basket(vendor_id):
+    session['current_vendor'] = vendor_id
     today = str(date.today())
     basket_key = f'basket_{vendor_id}'
     delivery_key = f'delivery_{vendor_id}_{today}'
@@ -251,7 +258,7 @@ def record_subscribed_deliveries():
                 'total': total
             }
 
-# ------------ History Route (Final Version) ------------
+# ------------ History Route ------------
 @vendor_bp.route('/<int:vendor_id>/history')
 def view_history(vendor_id):
     today = date.today()

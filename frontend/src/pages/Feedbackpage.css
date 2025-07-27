@@ -1,0 +1,60 @@
+.feedback-container {
+  padding: 4rem 1rem;
+  min-height: calc(100vh - 56px);
+  font-family: 'Hind Siliguri', sans-serif;
+  background-color: #fffae5;
+  background-image: url("data:image/svg+xml,..."); /* Your SVG background */
+  background-attachment: fixed;
+}
+
+.feedback-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border-top: 8px solid #27ae60; /* Green accent */
+}
+
+.feedback-title {
+  font-weight: 700;
+  text-align: center;
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.submit-button {
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #f39c12; /* Brand Orange */
+  border: none;
+  transition: all 0.3s ease;
+}
+.submit-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px);
+}

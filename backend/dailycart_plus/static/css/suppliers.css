@@ -1,122 +1,145 @@
-/* suppliers.css */
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fdfdfd;
-    margin: 0;
-    padding: 0;
+/* --- Main Container & Title --- */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.main-container {
-    max-width: 960px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
+/* --- Confirmation & Empty Messages --- */
+.confirm-msg, .empty-msg {
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 auto 2rem auto;
+  max-width: 800px;
 }
 
-/* Supplier Cards */
+.confirm-msg {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.empty-msg {
+  background-color: #f8f9fa;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+
+/* --- Supplier Card Styling --- */
 .supplier-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s ease;
-}
-
-.supplier-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  padding: 1.5rem 2rem;
+  border-left: 6px solid var(--brand-green); /* Green accent for suppliers */
 }
 
 .supplier-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-.supplier-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #34495e;
+.supplier-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows location to wrap on small screens */
 }
 
-.trust-score {
-    font-size: 0.95rem;
-    color: #27ae60;
+.supplier-header .location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-light);
+  white-space: nowrap;
+  margin-left: 1rem;
 }
 
-/* Ingredient list */
-.ingredient-list {
-    margin: 10px 0;
-    padding-left: 20px;
-    color: #555;
+.supplier-card p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 0.5rem 0;
 }
 
-/* Rating Form */
+.supplier-card .not-rated {
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* --- Rating Form inside the Card --- */
 .rating-form {
-    margin-top: 10px;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.rating-form select,
-.rating-form button {
-    padding: 6px 10px;
-    margin-right: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.rating-form label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.rating-form select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 1rem;
 }
 
 .rating-form button {
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--brand-green);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .rating-form button:hover {
-    background-color: #2980b9;
+  background-color: #229954;
 }
 
-/* Message Banner */
-.message {
-    background-color: #dff0d8;
-    color: #3c763d;
-    border: 1px solid #c3e6cb;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-/* Nav Buttons */
+
+/* --- Navigation Buttons at the bottom --- */
 .nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
 }
 
 .nav-buttons a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #00796b;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
 .nav-buttons a:hover {
-    background-color: #005f50;
-}
-
-.nav-buttons a.active {
-    background-color: #27ae60;
+  background-color: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
 }

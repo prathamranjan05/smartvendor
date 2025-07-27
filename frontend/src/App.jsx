@@ -3,23 +3,27 @@ import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom
 
 // Import your pages and components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import RolesSelection from "./pages/RolesSelection";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import DailyCart from "./pages/DailyCart";
 import VendorProfile from "./pages/VendorProfile";
 import SupplierProfile from "./pages/SupplierProfile"; 
-// --- REMOVED: SupplierDashboard is no longer needed ---
+import Contactus from "./pages/Contactus"; 
+import FeedbackPage from "./pages/Feedbackpage"; // <-- 1. IMPORT THE NEW PAGE
 
 /**
- * A layout component that includes the Navbar.
- * Routes wrapped in this layout will display the Navbar.
+ * A layout component that includes the Navbar and Footer.
  */
 const MainLayout = () => {
   return (
     <>
-      <Navbar />
-      <Outlet /> {/* This will render the child route's element */}
+        <Navbar />
+        <main className="main-content">
+              <Outlet />
+        </main>
+        <Footer />
     </>
   );
 };
@@ -28,11 +32,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* --- Public routes (without Navbar) --- */}
+        {/* --- Public routes (without Navbar/Footer) --- */}
         <Route path="/" element={<RolesSelection />} />
         <Route path="/login/:role" element={<Login />} />
 
-        {/* --- Protected routes (with Navbar) --- */}
+        {/* --- Protected routes (with Navbar/Footer) --- */}
         <Route element={<MainLayout />}>
           <Route
             path="/vendor-dashboard"
@@ -43,11 +47,13 @@ function App() {
             element={<Dashboard role="customer" />}
           />
           
-          {/* --- REMOVED: The route for the supplier's dashboard --- */}
-
           <Route path="/dailycart" element={<DailyCart />} />
           <Route path="/vendorprofile" element={<VendorProfile />} />
           <Route path="/supplierprofile" element={<SupplierProfile />} />
+          {/* Corrected path to lowercase for consistency */}
+          <Route path="/contactus" element={<Contactus />} /> 
+          {/* <-- 2. ADD THE NEW ROUTE FOR THE FEEDBACK PAGE --> */}
+          <Route path="/feedback" element={<FeedbackPage />} />
         </Route>
       </Routes>
     </Router>
