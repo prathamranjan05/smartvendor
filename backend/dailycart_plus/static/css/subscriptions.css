@@ -1,0 +1,175 @@
+/* --- Main Container & Title --- */
+.main-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.main-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Flash Messages --- */
+.flash-message {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.flash-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.flash-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* --- Subscription Card Styling --- */
+.subscriptions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.subscription-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  overflow: hidden;
+}
+
+/* Card Header */
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sub-header .frequency {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.sub-header .date {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* Card Details */
+.sub-details {
+  padding: 1.5rem;
+  line-height: 1.7;
+}
+
+.sub-details p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Card Actions */
+.sub-actions {
+  background-color: #fdfdfd;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.modify-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.modify-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+.modify-form input,
+.modify-form select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 1rem;
+}
+
+.custom-days {
+  grid-column: 1 / -1; /* Span full width */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Action Buttons --- */
+.sub-actions .btn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sub-actions .btn.modify {
+  background-color: var(--brand-green);
+  color: white;
+}
+.sub-actions .btn.modify:hover {
+  background-color: #229954;
+}
+
+/* Group Delete and Skip buttons together */
+.sub-actions form:not(.modify-form) {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.sub-actions .btn.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+.sub-actions .btn.delete:hover {
+  background-color: #c0392b;
+}
+
+.sub-actions .btn.pause {
+  background-color: #f39c12;
+  color: white;
+}
+.sub-actions .btn.pause:hover {
+  background-color: #d35400;
+}
+
+
+/* --- Empty State --- */
+.empty {
+  text-align: center;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  background-color: #f8f9fa;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}

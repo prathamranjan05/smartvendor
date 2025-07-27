@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>📜 Transaction History</h1>
+
+    {% if history %}
+        {% for day in history %}
+        <div class="history-card">
+            <div class="history-header">
+                <h2>{{ day.date }}</h2>
+                <span class="total">Total: ₹{{ day.total }}</span>
+            </div>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty (kg)</th>
+                        <th>Price/kg</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in day["items"] %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>₹{{ item.price_per_kg }}</td>
+                        <td>₹{{ item.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty-msg">📭 No delivery history found.</p>
+    {% endif %}
+
+    <div class="nav-buttons">
+        <a href="{{ url_for('vendor.show_basket', vendor_id=vendor_id) }}">🧺 My Basket</a>
+        <a href="{{ url_for('vendor.view_subscriptions', vendor_id=vendor_id) }}">📦 My Subscriptions</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+/* --- Main Container & Title --- */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem; /* Padding added to the container for spacing */
+}
+
+.container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* --- History Card Styling --- */
+.history-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  overflow: hidden; /* Ensures the header's rounded corners are applied */
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa; /* Light grey header for contrast */
+  border-bottom: 2px solid var(--border-color);
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.history-header .total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-green);
+}
+
+/* --- Item Table within the Card --- */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table thead th {
+  text-align: left;
+  padding: 0.8rem 1.5rem;
+  color: var(--text-light);
+  font-weight: 600;
+  background-color: #fdfdfd;
+}
+
+.history-table tbody td {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- User Messages & Navigation --- */
+.empty-msg {
+  text-align: center;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  background-color: #f8f9fa;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-buttons a:hover {
+  background-color: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
+}

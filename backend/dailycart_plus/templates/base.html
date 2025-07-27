@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DailyCart+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+  <!-- Page-specific Style -->
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="{{ url_for('static', filename='img/portal-thumbnail.jpg') }}" alt="Portal Icon" class="portal-icon">
+      <span class="brand">🛒 DailyCart+</span>
+    </div>
+    <div class="nav-links">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('vendor.show_basket', vendor_id=vendor_id) }}">My Basket</a>
+      <a href="{{ url_for('vendor.view_subscriptions', vendor_id=vendor_id)}}">My Subscriptions</a>
+      <a href="{{ url_for('vendor.view_history', vendor_id=vendor_id)}}">History</a>
+      <a href="{{ url_for('supplier.list_suppliers',vendor_id=vendor_id) }}">Suppliers</a>
+      <a href="#" class="settings-button" title="Settings">⚙</a>
+    </div>
+  </nav>
+
+
+  <!-- Page Content -->
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Page-specific Scripts -->
+  {% block scripts %}{% endblock %}
+
+  <!-- Settings Popup Script -->
+  <script>
+    const settingsButton = document.querySelector('.settings-button');
+    const popup = document.getElementById('settingsPopup');
+
+    settingsButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (!popup.contains(event.target) && !settingsButton.contains(event.target)) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

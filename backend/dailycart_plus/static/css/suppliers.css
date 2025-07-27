@@ -1,0 +1,145 @@
+/* --- Main Container & Title --- */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Confirmation & Empty Messages --- */
+.confirm-msg, .empty-msg {
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 auto 2rem auto;
+  max-width: 800px;
+}
+
+.confirm-msg {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.empty-msg {
+  background-color: #f8f9fa;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+
+/* --- Supplier Card Styling --- */
+.supplier-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  padding: 1.5rem 2rem;
+  border-left: 6px solid var(--brand-green); /* Green accent for suppliers */
+}
+
+.supplier-header {
+  margin-bottom: 1rem;
+}
+
+.supplier-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows location to wrap on small screens */
+}
+
+.supplier-header .location {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-light);
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.supplier-card p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 0.5rem 0;
+}
+
+.supplier-card .not-rated {
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* --- Rating Form inside the Card --- */
+.rating-form {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-form label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.rating-form select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 1rem;
+}
+
+.rating-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--brand-green);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rating-form button:hover {
+  background-color: #229954;
+}
+
+
+/* --- Navigation Buttons at the bottom --- */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-buttons a:hover {
+  background-color: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
+}
