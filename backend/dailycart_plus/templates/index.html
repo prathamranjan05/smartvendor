@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to DailyCart+</h1>
+    <p>Your smart daily supply assistant for fresh and efficient street vending.</p>
+
+    <div class="features">
+        <div class="feature-card">
+            <h2>🧺 My Basket</h2>
+            <p>Quickly add daily items and quantities. Get instant pricing and totals.</p>
+            <a href="{{ url_for('vendor.show_basket', vendor_id=vendor_id) }}" class="btn-link">Go to Basket</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>📅 My Subscriptions</h2>
+            <p>Manage your delivery schedules – daily, weekly, or custom days.</p>
+            <a href="{{ url_for('vendor.view_subscriptions', vendor_id=vendor_id) }}" class="btn-link">View Subscriptions</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>📜 History</h2>
+            <p>Track all your past deliveries and spending, day by day.</p>
+            <a href="{{ url_for('vendor.view_history', vendor_id=vendor_id) }}" class="btn-link">View History</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🏭 Suppliers</h2>
+            <p>Find trusted suppliers, view ratings, and submit your feedback.</p>
+            <a href="{{ url_for('supplier.list_suppliers', vendor_id=vendor_id) }}" class="btn-link">Browse Suppliers</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

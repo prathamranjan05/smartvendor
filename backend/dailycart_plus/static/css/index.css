@@ -1,0 +1,85 @@
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* --- Features Grid --- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Feature Card Styling --- */
+.feature-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid transparent; /* Prepare for colored border */
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Add unique border colors for each card on hover */
+.feature-card:nth-child(1):hover { border-top-color: #f39c12; } /* Orange */
+.feature-card:nth-child(2):hover { border-top-color: #3498db; } /* Blue */
+.feature-card:nth-child(3):hover { border-top-color: #9b59b6; } /* Purple */
+.feature-card:nth-child(4):hover { border-top-color: #27ae60; } /* Green */
+
+
+.feature-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.feature-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  flex-grow: 1; /* Ensures cards are same height in a row */
+  margin-bottom: 1.5rem;
+}
+
+.btn-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  background-color: var(--brand-orange);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #E66A00;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
+}

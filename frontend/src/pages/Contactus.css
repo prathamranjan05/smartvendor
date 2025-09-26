@@ -1,0 +1,131 @@
+/* --- Main Container with Consistent Background --- */
+.contact-us-container {
+  padding: 4rem 1rem;
+  min-height: calc(100vh - 56px); /* Adjust based on navbar height */
+  font-family: 'Hind Siliguri', sans-serif;
+  background-color: #fffae5;
+  background-image: url("data:image/svg+xml,..."); /* Your SVG background */
+  background-attachment: fixed;
+}
+
+/* --- Page Intro Styling --- */
+.page-intro {
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #c0392b; /* Terracotta Red */
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: #5c3d03;
+  max-width: 700px;
+  margin: 0.5rem auto 0 auto;
+}
+
+/* --- Team Member Card Styling --- */
+.team-member-card {
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  padding-top: 30px;
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card-img-container {
+  margin-top: -60px; /* Pulls the avatar up */
+  display: flex;
+  justify-content: center;
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #34495e;
+  margin-top: 10px;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.member-socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.member-socials a {
+  color: #34495e;
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.member-socials a:hover {
+  color: #f39c12; /* Brand Orange */
+  transform: scale(1.2);
+}
+
+/* --- Get in Touch Section --- */
+.get-in-touch-section {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.section-text {
+  font-size: 1.15rem;
+  color: #5c3d03;
+  max-width: 600px;
+  margin: 0.5rem auto 1.5rem auto;
+}
+
+.contact-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #27ae60;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-email-link:hover {
+  color: #fff;
+  background-color: #27ae60;
+  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}

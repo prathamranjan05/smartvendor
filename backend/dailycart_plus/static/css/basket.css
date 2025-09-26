@@ -1,0 +1,201 @@
+/* --- Main Page Container & Title --- */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Add Item Form --- */
+.add-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.add-form select,
+.add-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Hind Siliguri', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-form select {
+  flex-grow: 2; /* Gives more space to the item selection */
+}
+
+.add-form input {
+  flex-grow: 1;
+}
+
+.add-form select:focus,
+.add-form input:focus {
+  outline: none;
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.2);
+}
+
+.add-form button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--brand-orange);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.add-form button:hover {
+  background-color: #E66A00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
+}
+
+/* --- Basket Table --- */
+.basket-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.basket-table thead th {
+  text-align: left;
+  padding: 0 1rem 0.5rem 1rem;
+  color: var(--text-light);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.basket-table tbody tr {
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.basket-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+/* Rounded corners for the table rows */
+.basket-table tbody td:first-child { border-radius: 8px 0 0 8px; }
+.basket-table tbody td:last-child { border-radius: 0 8px 8px 0; }
+
+.item-total {
+  font-weight: 700;
+}
+
+.remove-btn {
+  background: none;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Table Footer for Grand Total */
+.basket-table tfoot th {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 1rem 0 1rem;
+  text-align: right;
+  color: var(--brand-green);
+}
+
+/* --- Subscribe Button --- */
+.subscribe-form {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.subscribe-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--brand-green);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #229954;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* --- User Messages --- */
+.success-msg, .empty-msg {
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.success-msg {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.empty-msg {
+  background-color: #f8f9fa;
+  color: var(--text-light);
+}
+
+/* --- Navigation Buttons at the bottom --- */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-buttons a:hover {
+  background-color: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
+}

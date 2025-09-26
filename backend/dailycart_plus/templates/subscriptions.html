@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subscriptions.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <h1>My Subscriptions</h1>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% if subscriptions %}
+        <div class="subscriptions-list">
+        {% for sub in subscriptions %}
+            <div class="subscription-card">
+                <div class="sub-header">
+                    <span class="frequency">{{ sub.frequency|capitalize }} Subscription</span>
+                    <span class="date">Since: {{ sub.subscribed_on }}</span>
+                </div>
+
+                <div class="sub-details">
+                    {% for item, qty in sub.basket.items() %}
+                        <p><strong>{{ item }}</strong>: {{ qty }} kg</p>
+                    {% endfor %}
+                    {% if sub.frequency == 'custom' %}
+                        <p>Custom Days: {{ sub.custom_days | join(', ') }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="sub-actions">
+                    <!-- Modify Form -->
+                    <form action="{{ url_for('vendor.modify_subscription', vendor_id=vendor_id, index=sub.index) }}" method="post" class="modify-form">
+                        <label>Start Date:
+                            <input type="date" name="start_date" required>
+                        </label>
+
+                        <label>Frequency:
+                            <select name="frequency" required onchange="toggleCustomDays(this, '{{ sub.index }}')">
+                                <option value="daily">Daily</option>
+                                <option value="alternate">Alternate</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="custom">Custom</option>
+                            </select>
+                        </label>
+
+                        <div class="custom-days" id="custom-days-{{ sub.index }}" style="display: none;">
+                            {% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                                <label><input type="checkbox" name="custom_days" value="{{ day }}"> {{ day }}</label>
+                            {% endfor %}
+                        </div>
+
+                        <button class="btn modify">Modify</button>
+                    </form>
+
+                    <!-- Delete Form -->
+                    <form action="{{ url_for('vendor.delete_subscription', vendor_id=vendor_id, index=sub.index) }}" method="post">
+                        <button class="btn delete">Delete</button>
+                    </form>
+
+                    <!-- Skip Form -->
+                    <form action="{{ url_for('vendor.skip_subscription_day', vendor_id=vendor_id, index=sub.index) }}" method="post">
+                        <button class="btn pause">Skip</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty">You have no active subscriptions.</p>
+    {% endif %}
+</div>
+
+<!-- JavaScript to toggle custom days -->
+<script>
+    function toggleCustomDays(selectElement, index) {
+        const customDiv = document.getElementById("custom-days-" + index);
+        if (selectElement.value === "custom") {
+            customDiv.style.display = "block";
+        } else {
+            customDiv.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}
