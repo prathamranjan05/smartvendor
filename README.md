@@ -108,11 +108,12 @@ This project was made possible by the collaborative effort of our dedicated team
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | `[ADITI MEHTA]`  | **Front-End Developer** <br/> - Designed and built the main UI components with **React** and designing using **Bootstrap**.    | [Link](https://github.com/Dynamic-ctrl)           |
 | `[ISHANI JINDAL]`  | **Front-End Developer** <br/> - Build UI components with **React** and focused on creating a responsive design using **Bootstrap**. | [Link](https://github.com/ishanijdev)           |
-| `[PRATHAM RANJAN]`   | **Back-End Developer** <br/> - Developed the feature: daily cart plus<br/> - produced and deployed the web app.     | [Link](https://github.com/prathamranjan05)           |
+| `[PRATHAM RANJAN]`   | **Back-End Developer** <br/> - Developed the feature: daily cart plus and deployed the web app.     | [Link](https://github.com/prathamranjan05)           |
 | `[MEHAR BHANWRA]`   | **Back-End Developer** <br/> - Implemented user authentication and authorization logic for new vendors. <br/>  | [Link](https://github.com/meharbhanwra)           |
 
 ---
 
 📜 License: This project is open-source and free to use for educational purposes.
+
 
 
