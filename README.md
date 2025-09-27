@@ -113,4 +113,6 @@ This project was made possible by the collaborative effort of our dedicated team
 
 ---
 
+📜 License: This project is open-source and free to use for educational purposes.
+
 
