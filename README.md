@@ -4,11 +4,11 @@
 
 ## 🚀 Live Demo
 
-You can view the live deployed version of our project here:
+You can view the live-deployed version of our project here:
+(NOTE: Use any 10-digit phone number and any 4-digit otp at the login page)
 
 **[https://smart-vendor.netlify.app/](https://smart-vendor.netlify.app/)**
 
-(NOTE: Use any 10-digit phone number and any 4-digit otp at the login page)
 ---
 
 ## 🌟 About The Project
@@ -115,6 +115,7 @@ This project was made possible by the collaborative effort of our dedicated team
 ---
 
 📜 License: This project is open-source and free to use for educational purposes.
+
 
 
 
