@@ -6,7 +6,6 @@ import './Contactus.css'; // We will create this stylesheet next
 import { Link } from 'react-router-dom';
 
 // --- TEAM MEMBER DATA ---
-// NOTE: I've added placeholder avatars and roles. Replace them with your actual details.
 const teamMembers = [
     {
         name: 'Ishani Jindal',
@@ -20,7 +19,7 @@ const teamMembers = [
         role: 'teamRole_Developer',
         avatarUrl: 'https://placehold.co/200x200/00A86B/FFFFFF?text=AM',
         githubUrl: 'https://github.com/Dynamic-ctrl',
-        linkedinUrl: 'https://www.linkedin.com/in/aditi-mehta/',
+        linkedinUrl: 'https://www.linkedin.com/in/aditi-mehta-4bb596201',
         
     },
     {

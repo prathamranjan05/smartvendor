@@ -100,6 +100,31 @@ experienceLabel: "Experience",
 paymentsLabel: "Payments",
 menuLabel: "Menu",
 
+meetTheTeamTitle: "Meet Our Team",
+teamSubtitle: "The passionate individuals behind SMART VENDOR, dedicated to connecting communities with the best local food.",
+teamRole_Developer: "Developer",
+getInTouchTitle: "Get In Touch",
+getInTouchText: "Have questions, feedback, or want to partner with us? We'd love to hear from you!",
+
+giveFeedbackButton: "Give Feedback",
+feedbackTitle: "Share Your Feedback",
+feedbackSubtitle: "Your insights help us improve. Let us know what you think!",
+nameLabel: "Name (Optional)",
+namePlaceholder: "Enter your name",
+emailLabelOptional: "Email (Optional)",
+emailPlaceholder: "Enter your email address",
+feedbackTypeLabel: "Type of Feedback",
+feedbackType_General: "General Comment",
+feedbackType_Bug: "Bug Report",
+feedbackType_Suggestion: "Suggestion",
+ratingLabel: "How would you rate your experience?",
+messageLabel: "Your Message",
+messagePlaceholder: "Tell us more...",
+submitFeedbackButton: "Submit Feedback",
+feedbackSuccess: "Thank you! Your feedback has been submitted successfully.",
+feedbackError: "Something went wrong. Please try again later.",
+
+
     }
   },
   hi: {
